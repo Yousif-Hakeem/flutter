@@ -15,6 +15,7 @@ String? password;
 GlobalKey<FormState> key = GlobalKey<FormState>();
 
 class _LoginState extends State<Login> {
+  bool hide = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +55,8 @@ class _LoginState extends State<Login> {
                       }
                     },
                     decoration: InputDecoration(
+                        icon: Icon(Icons.email),
+                        iconColor: Colors.deepOrange,
                         errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.deepOrange)),
@@ -75,6 +78,7 @@ class _LoginState extends State<Login> {
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
+                    obscureText: hide,
                     style: TextStyle(color: Colors.white),
                     keyboardType: TextInputType.text,
                     onSaved: (value) {
@@ -90,6 +94,19 @@ class _LoginState extends State<Login> {
                       }
                     },
                     decoration: InputDecoration(
+                        icon: Icon(Icons.password),
+                        iconColor: Colors.deepOrange,
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              hide = !hide;
+                            });
+                          },
+                          icon: Icon(
+                            Icons.remove_red_eye,
+                            color: Colors.deepOrange,
+                          ),
+                        ),
                         errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.deepOrange)),

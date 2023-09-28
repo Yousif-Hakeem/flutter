@@ -147,7 +147,7 @@ class _LoginState extends State<Login> {
                       //
                     }
                   },
-                  child: const Text('Login'),
+                  child: const Text('Login',style: TextStyle(fontWeight: FontWeight.bold)),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepOrange,
                     textStyle: const TextStyle(fontSize: 16),

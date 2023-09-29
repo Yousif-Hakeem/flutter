@@ -20,6 +20,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.white10,
+      ),
       backgroundColor: Colors.white10,
       appBar: AppBar(
         centerTitle: true,

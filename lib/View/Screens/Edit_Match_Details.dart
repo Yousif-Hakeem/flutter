@@ -108,7 +108,6 @@ class _EditMatchScreenState extends State<EditMatchScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Save the updated values and pop the screen
                 TheMatches updatedMatch = widget.match.copyWith(
                   firstTeam: firstTeamController.text,
                   secondTeam: secondTeamController.text,

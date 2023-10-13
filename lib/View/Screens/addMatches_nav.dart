@@ -2,8 +2,10 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/Model/Matches_Database.dart';
 import 'package:flutter_application_2/Model/matches_attrib.dart';
+import 'package:flutter_application_2/ViewModel/cubit/matches_cubit.dart';
 
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 class AddMatchesNavBar extends StatefulWidget {
   const AddMatchesNavBar({super.key});

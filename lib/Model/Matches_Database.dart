@@ -29,6 +29,7 @@ class MyDb {
   Future<List<TheMatches>> getFromDb() async {
     try {
       Database db = await initializeDb();
+      await Future.delayed(Duration(seconds: 2));
       List<Map<String, dynamic>> data = await db.query(matchesTable);
 
       List<TheMatches> matches = data.map((e) {

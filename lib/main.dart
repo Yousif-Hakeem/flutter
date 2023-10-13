@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_application_2/Model/routes.dart';
 import 'package:flutter_application_2/View/Screens/Login.dart';
+import 'package:flutter_application_2/ViewModel/cubit/indicitor_cubit.dart';
+import 'package:flutter_application_2/ViewModel/cubit/matches_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:path/path.dart';
 
@@ -17,19 +20,29 @@ void main() {
     //   ChangeNotifierProvider(create: (context) => ScoreCounterProvider())
     // ],
     // child:
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      // home: Login(),
-      // routes: <String, WidgetBuilder>{
-      // '/': (context) => const ProfileScreen(),
-      // '/': (context) => const Login(),
-      // '/home': (context) => const Home(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<IndicitorCubit>(
+          create: (context) => IndicitorCubit(),
+        ),
+        BlocProvider<MatchesCubit>(
+          create: (context) => MatchesCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        // home: Login(),
+        // routes: <String, WidgetBuilder>{
+        // '/': (context) => const ProfileScreen(),
+        // '/': (context) => const Login(),
+        // '/home': (context) => const Home(),
 
-      // '/add_matches': (context) => const AddMatches(),
-      // '/upcoming_matches': (context) => const UpcomingMatches(),
-      // }
-      //,
-      onGenerateRoute: Routing.generateRoute,
+        // '/add_matches': (context) => const AddMatches(),
+        // '/upcoming_matches': (context) => const UpcomingMatches(),
+        // }
+        //,
+        onGenerateRoute: Routing.generateRoute,
+      ),
     ),
   );
   // )
